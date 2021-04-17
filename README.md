@@ -1,7 +1,7 @@
 # Nội Dung
 
 ## Khi Đăng Nhập vào sẽ phân 2 quyền: admin và GV
-### Admin:
+### Admin ==================
 #### *Danh Sách GV*:
 - Hiển thị các giáo viên hiện có. (sửa/xóa).
 - Nút thêm giáo viên -> tạo tài khoản cho giáo viên mới.
@@ -18,7 +18,7 @@
 #### *Phiếu Thanh Toán*:
 - Như mockup.
 
-### GV:
+### GV ==================
 #### Sửa thông tin cá nhân:
 - Cập nhật thông tin cá nhân của giáo viên đó.
 #### Danh sách phiếu: 
