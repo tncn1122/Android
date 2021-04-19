@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    >
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_margin ="20dp"
+       android:padding="10dp"
+       android:background="@drawable/rounded_corner"
+       android:layout_weight="3"
+       android:orientation="horizontal"
+       >
+    <ImageView
+        android:id="@+id/imgAvata"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/logo_login"
+        android:layout_weight="2"
+        android:scaleType="fitCenter"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:orientation="vertical">
+           <TextView
+               android:id="@+id/txtUserFullName"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:text="Trần An Khoa"
+               android:textSize="30sp"
+               android:padding="10dp"
+               android:textStyle="bold"/>
+
+           <Button
+               android:id="@+id/btnDangXuat"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="20dp"
+               android:text="@string/dangXuat"
+               android:backgroundTint="@color/mainTextColor"
+               app:cornerRadius="25dp"
+               android:drawableLeft="@drawable/ic_baseline_chevron_left_24"/>
+       </LinearLayout>
+   </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin ="20dp"
+        android:background="@drawable/rounded_corner"
+        android:layout_weight="1"
+        android:padding="20dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnThongTinCaNhan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#C62828"
+                android:padding="10dp"
+                android:text="@string/thongTinCaNhan"
+                android:textSize="18sp"
+                app:cornerRadius="25dp" />
+
+            <Button
+                android:id="@+id/btnDanhSachPhieu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#EF6C00"
+                android:padding="10dp"
+                android:text="@string/danhSachPhieu"
+                android:textSize="18sp"
+                app:cornerRadius="25dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnPhieuThanhToan"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#F9A825"
+                android:padding="10dp"
+                android:text="@string/phieuThanhToan"
+                android:textSize="18sp"
+                app:cornerRadius="25dp" />
+
+            <Button
+                android:id="@+id/btnThongKeChiPhi"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#558B2F"
+                android:padding="10dp"
+                android:text="@string/thongKeChiPhi"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                app:cornerRadius="25dp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

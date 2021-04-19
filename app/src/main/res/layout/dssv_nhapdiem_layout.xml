@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtDSSV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/DSSV"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/txtMaMH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/MH"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+            <TextView
+                android:id="@+id/txtTenMH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="@string/TenMH"
+                android:textAlignment="center"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/txtMaSV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="3"
+                    android:padding="10dp"
+                    android:text="@string/maSV"
+                    android:textAlignment="textStart" />
+
+                <TextView
+                    android:id="@+id/txtHoTenSV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:padding="10dp"
+                    android:text="@string/HoTen"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/txtSdtGV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:background="#FFFFFF"
+                    android:padding="10dp"
+                    android:text="Điểm"
+                    android:textAlignment="center" />
+
+                <ImageButton
+                    android:id="@+id/btnThem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"
+                    android:foregroundTint="#FFFFFF"
+                    android:layout_weight="1"
+                    android:scaleType="center"
+                    android:src="@android:drawable/ic_input_add" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lvDSSV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/rounded_corner">
+
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
