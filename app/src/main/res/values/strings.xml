@@ -22,4 +22,16 @@
     <string name="thongKeChiPhi">Thống kê chi phí</string>
     <string name="taoPhieuCham">Tạo Phiếu chấm</string>
     <string name="taoThongTinCham">Tạo thông tin chấm</string>
+    <string name="tongCong">Tổng cộng:</string>
+    <string name="tongTien">100,000,000</string>
+    <string name="ThongTinKyTen">TP. Hồ Chí Minh, Ngày</string>
+    <string name="TienTe">đồng</string>
+    <string name="Thang">Tháng</string>
+    <string name="Nam">Năm</string>
+    <string name="nguoiLapPhieu">Người lập phiếu</string>
+    <string name="chuKy">Chữ Ký</string>
+    <string name="maPhieu">SP</string>
+    <string name="ngayGiao">Giao</string>
+    <string name="soBai">Số Bài</string>
+    <string name="tong">Tổng</string>
 </resources>
