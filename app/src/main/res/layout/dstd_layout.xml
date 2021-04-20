@@ -37,16 +37,24 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <Spinner
-            android:id="@+id/spinnerPhieu"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="10dp"
-            android:spinnerMode="dropdown"
-            android:tooltipText="Dò phiếu">
+            android:orientation="horizontal"
+            android:background="@drawable/shape_email"
+            android:layout_margin="20dp">
 
-        </Spinner>
+            <Spinner
+                android:id="@+id/spnGV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:padding="15dp"
+                android:spinnerMode="dropdown"
+                android:textColor="@color/mainTextColor"
+                android:textColorHighlight="@color/mainTextColor"
+                android:textColorHint="#790D47A1" />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -84,26 +92,16 @@
                     android:padding="10dp"
                     android:text="@string/tienDo"
                     android:textAlignment="center" />
-                <ImageButton
-                    android:id="@+id/btnThem"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="#FFFFFF"
-                    android:backgroundTint="#FFFFFF"
-                    android:foregroundTint="#FFFFFF"
-                    android:layout_weight="1"
-                    android:scaleType="center"
-                    android:src="@android:drawable/ic_input_add" />
             </LinearLayout>
 
             <ListView
                 android:id="@+id/lvDSSV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
+                android:background="@drawable/rounded_corner"
                 android:paddingLeft="5dp"
                 android:paddingRight="5dp"
-                android:background="@drawable/rounded_corner">
+                android:paddingBottom="10dp">
 
             </ListView>
         </LinearLayout>
