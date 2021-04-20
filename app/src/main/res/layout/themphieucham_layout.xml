@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/themPhieu"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/ngayGiaoBai"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:textColor="@color/mainTextColor"
+                android:textColorHint="#790D47A1"
+                android:textColorHighlight="@color/mainTextColor"
+                android:layout_marginTop="20dp"/>
+            />
+
+            <DatePicker
+                android:id="@+id/dpPhieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:datePickerMode="spinner"
+                android:calendarViewShown="false"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/giangVien"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:textColor="@color/mainTextColor"
+                android:textColorHint="#790D47A1"
+                android:textColorHighlight="@color/mainTextColor"/>
+            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/shape_email"
+                android:layout_margin="20dp">
+
+                <Spinner
+                    android:id="@+id/spnGV"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="15dp"
+                    android:spinnerMode="dropdown"
+                    android:textColor="@color/mainTextColor"
+                    android:textColorHighlight="@color/mainTextColor"
+                    android:textColorHint="#790D47A1" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnThemPhieu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/mainTextColor"
+                android:padding="15dp"
+                android:text="Thêm"
+                app:cornerRadius="25dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

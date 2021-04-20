@@ -41,4 +41,7 @@
     <string name="tenTaiKhoan">Tên Tài Khoản</string>
     <string name="matKhau">Mật khẩu</string>
     <string name="nhapLaiMK">Nhập lại mật khẩu</string>
+    <string name="themPhieu">Thêm Phiếu Chấm</string>
+    <string name="ngayGiaoBai">Ngày giao bài</string>
+    <string name="giangVien">Giảng viên</string>
 </resources>
