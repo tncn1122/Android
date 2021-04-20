@@ -38,4 +38,7 @@
     <string name="q2">Quý 2</string>
     <string name="q3">Quý 3</string>
     <string name="q4">Quý 4</string>
+    <string name="tenTaiKhoan">Tên Tài Khoản</string>
+    <string name="matKhau">Mật khẩu</string>
+    <string name="nhapLaiMK">Nhập lại mật khẩu</string>
 </resources>
