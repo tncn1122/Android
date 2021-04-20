@@ -1,8 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@drawable/login_bg">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:background="@drawable/rounded_corner"
+        android:backgroundTint="#FFFFFF"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="@string/themThongTin"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/soPhieu"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:textColor="@color/mainTextColor"
+                android:textColorHint="#790D47A1"
+                android:textColorHighlight="@color/mainTextColor"
+                android:layout_marginTop="20dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/shape_email"
+                android:layout_margin="20dp">
+
+                <Spinner
+                    android:id="@+id/spnSoPhieu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="15dp"
+                    android:spinnerMode="dropdown"
+                    android:textColor="@color/mainTextColor"
+                    android:textColorHighlight="@color/mainTextColor"
+                    android:textColorHint="#790D47A1" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/TenMH"
+                android:textAlignment="textStart"
+                android:textStyle="bold"
+                android:textColor="@color/mainTextColor"
+                android:textColorHint="#790D47A1"
+                android:textColorHighlight="@color/mainTextColor"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/shape_email"
+                android:layout_margin="20dp">
+
+                <Spinner
+                    android:id="@+id/spnTenMH"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:padding="15dp"
+                    android:spinnerMode="dropdown"
+                    android:textColor="@color/mainTextColor"
+                    android:textColorHighlight="@color/mainTextColor"
+                    android:textColorHint="#790D47A1" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/edtSoBai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/shape_email"
+                android:hint="Số Bài"
+                android:padding="10dp"
+                android:textColor="@color/mainTextColor"
+                android:textColorHighlight="@color/mainTextColor"
+                android:textColorHint="#790D47A1" />
+
+            <Button
+                android:id="@+id/btnThemThongTin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/mainTextColor"
+                android:padding="15dp"
+                android:text="Thêm"
+                app:cornerRadius="25dp" />
+        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

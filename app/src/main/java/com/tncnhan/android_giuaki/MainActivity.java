@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -18,19 +19,26 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.themphieucham_layout);
-        String tenGV[] = {"Giáo viên 1", "Giáo viên 2", "Giáo viên 3", "Giáo viên 4", "Giáo viên 5"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, tenGV);
-        adapter.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
-        Spinner spn = (Spinner)findViewById(R.id.spnGV);
-        Button btnThem = (Button)findViewById(R.id.btnThemPhieu);
-        DatePicker dpNgayGiao = (DatePicker)findViewById(R.id.dpPhieu);
-        spn.setAdapter(adapter);
+        setContentView(R.layout.themthongtincham_layout);
+//        String tenGV[] = {"Giáo viên 1", "Giáo viên 2", "Giáo viên 3", "Giáo viên 4", "Giáo viên 5"};
+        String maPhieu[] = {"01","02","03","04","05"};
+        String tenMH[] = {"Môn học 1","Môn học 2","Môn học 3","Môn học 4","Môn học 5"};
+        ArrayAdapter<String> adapterMP = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, maPhieu);
+        ArrayAdapter<String> adapterMH = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, tenMH);
+        adapterMP.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        adapterMH.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
+        Spinner spnMP = (Spinner)findViewById(R.id.spnSoPhieu);
+        Spinner spnMH = (Spinner)findViewById(R.id.spnTenMH);
+        EditText edtSoBai = (EditText)findViewById(R.id.edtSoBai);
+        Button btnThem = (Button)findViewById(R.id.btnThemThongTin);
+//        DatePicker dpNgayGiao = (DatePicker)findViewById(R.id.dpPhieu);
+        spnMH.setAdapter(adapterMH);
+        spnMP.setAdapter(adapterMP);
 
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, String.valueOf(dpNgayGiao.getDayOfMonth()) +" " + String.valueOf(dpNgayGiao.getMonth() + 1) + " " + String.valueOf(dpNgayGiao.getYear()) + "\n" + spn.getSelectedItem(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, spnMP.getSelectedItem() + "\n" + spnMH.getSelectedItem() + "\n" + edtSoBai.getText(), Toast.LENGTH_SHORT).show();
             }
         });
 

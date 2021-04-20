@@ -44,4 +44,6 @@
     <string name="themPhieu">Thêm Phiếu Chấm</string>
     <string name="ngayGiaoBai">Ngày giao bài</string>
     <string name="giangVien">Giảng viên</string>
+    <string name="soPhieu">Số phiếu</string>
+    <string name="themThongTin">Thêm Thông Tin Phiếu</string>
 </resources>
