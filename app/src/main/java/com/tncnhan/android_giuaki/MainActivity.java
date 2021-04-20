@@ -2,7 +2,9 @@ package com.tncnhan.android_giuaki;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -15,7 +17,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
+    DBHelper DBhelper ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -111,6 +113,14 @@ public class MainActivity extends AppCompatActivity {
 
 //        ListView listView= findViewById(R.id.lvDSGV);
 //        listView.setAdapter(adapter);
-
+        Init_DB();
+    }
+    public void Init_DB(){
+        DBhelper =new DBHelper(this,"qlcd.sqlite",null,1);
+        //DBhelper.QueryData("create table users(teacherid varchar(30) primary key,userpass varchar(30),userrole int,fullname nvarchar(100),phone nvarchar(20))");
+        //DBhelper.QueryData("insert into users values('admi2n','123',0,'bcv','0123')");
+        Cursor dt= DBhelper.GetData("select * from users");
+        dt.moveToNext();
+        Log.d("asdfgh",dt.getString(1) );
     }
 }
