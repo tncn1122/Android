@@ -25,7 +25,7 @@
     <string name="tongCong">Tổng cộng:</string>
     <string name="tongTien">100,000,000</string>
     <string name="ThongTinKyTen">TP. Hồ Chí Minh, Ngày</string>
-    <string name="TienTe">đồng</string>
+    <string name="TienTe">đ</string>
     <string name="Thang">Tháng</string>
     <string name="Nam">Năm</string>
     <string name="nguoiLapPhieu">Người lập phiếu</string>
@@ -34,4 +34,8 @@
     <string name="ngayGiao">Giao</string>
     <string name="soBai">Số Bài</string>
     <string name="tong">Tổng</string>
+    <string name="q1">Quý 1</string>
+    <string name="q2">Quý 2</string>
+    <string name="q3">Quý 3</string>
+    <string name="q4">Quý 4</string>
 </resources>
