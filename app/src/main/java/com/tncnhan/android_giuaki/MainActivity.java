@@ -117,10 +117,21 @@ public class MainActivity extends AppCompatActivity {
     }
     public void Init_DB(){
         DBhelper =new DBHelper(this,"qlcd.sqlite",null,1);
-        //DBhelper.QueryData("create table users(teacherid varchar(30) primary key,userpass varchar(30),userrole int,fullname nvarchar(100),phone nvarchar(20))");
+        DBhelper.QueryData("create table if not exists users(teacherid varchar(30) primary key,userpass varchar(30),userrole int,fullname nvarchar(100),phone nvarchar(20))");
+        DBhelper.QueryData("create table if not exists reportcard( reportid int IDENTITY(1,1) primary key, teacherid varchar(30), delidate date, FOREIGN KEY (teacherid) REFERENCES users(teacherid) )");
+        DBhelper.QueryData("create table if not exists class( classid varchar(20) primary key, classname varchar(30), price int )");
+        DBhelper.QueryData("create table if not exists reportinfo( reportid int, classid varchar(20), primary key(reportid, classid), FOREIGN KEY (reportid) REFERENCES reportcard(reportid), FOREIGN KEY (classid) REFERENCES class(classid) )");
+        DBhelper.QueryData("create table if not exists student( studentid varchar(30) primary key, studentname varchar(50) )");
+        DBhelper.QueryData("create table if not exists score( studentid varchar(30), classid varchar(20), score float check(score >= 0 and score <= 10), primary key(studentid,classid), FOREIGN KEY (studentid) REFERENCES student(studentid), FOREIGN KEY (classid) REFERENCES class(classid) )");
+
         //DBhelper.QueryData("insert into users values('admi2n','123',0,'bcv','0123')");
-        Cursor dt= DBhelper.GetData("select * from users");
-        dt.moveToNext();
-        Log.d("asdfgh",dt.getString(1) );
+//        DBhelper.QueryData("insert into reportcard (teacherid,delidate)values('admi2n',2020/05/10)");
+//        DBhelper.QueryData("insert into class values('class1','class mot',12345)");
+//        DBhelper.QueryData("insert into reportinfo values('1','class1')");
+//        DBhelper.QueryData("insert into student values('s1','student1')");
+
+//        Cursor dt= DBhelper.GetData("select * from student");
+//        dt.moveToNext();
+//        Log.d("abcd",dt.getString(1) );
     }
 }
