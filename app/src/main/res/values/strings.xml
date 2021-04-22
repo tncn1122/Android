@@ -48,4 +48,10 @@
     <string name="soPhieu">Số phiếu</string>
     <string name="themThongTin">Thêm Thông Tin Phiếu</string>
     <string name="inPhieu">In Phiếu</string>
+    <string name="title_activity_d_s_m_h">DSMHActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
 </resources>

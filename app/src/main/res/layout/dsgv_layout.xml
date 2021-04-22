@@ -60,6 +60,7 @@
                     android:text="@string/SDT"
                     android:textAlignment="textEnd" />
                 <ImageButton
+                    android:id="@+id/imgbtn_addgv"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:background="#FFFFFF"
