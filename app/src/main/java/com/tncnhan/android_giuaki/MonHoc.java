@@ -44,4 +44,8 @@ public class MonHoc {
     public void setCount(String count) {
         Count = count;
     }
+    @Override
+    public String toString(){
+        return this.getTenMH();
+    }
 }

@@ -88,17 +88,17 @@
                     android:textColorHint="#790D47A1" />
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/edtSoBai"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:background="@drawable/shape_email"
-                android:hint="Số Bài"
-                android:padding="10dp"
-                android:textColor="@color/mainTextColor"
-                android:textColorHighlight="@color/mainTextColor"
-                android:textColorHint="#790D47A1" />
+<!--            <EditText-->
+<!--                android:id="@+id/edtSoBai"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="20dp"-->
+<!--                android:background="@drawable/shape_email"-->
+<!--                android:hint="Số Bài"-->
+<!--                android:padding="10dp"-->
+<!--                android:textColor="@color/mainTextColor"-->
+<!--                android:textColorHighlight="@color/mainTextColor"-->
+<!--                android:textColorHint="#790D47A1" />-->
 
             <Button
                 android:id="@+id/btnThemThongTin"

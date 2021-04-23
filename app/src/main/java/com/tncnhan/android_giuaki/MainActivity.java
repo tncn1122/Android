@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         adapterMH.setDropDownViewResource(android.R.layout.select_dialog_singlechoice);
         Spinner spnMP = (Spinner)findViewById(R.id.spnSoPhieu);
         Spinner spnMH = (Spinner)findViewById(R.id.spnTenMH);
-        EditText edtSoBai = (EditText)findViewById(R.id.edtSoBai);
         Button btnThem = (Button)findViewById(R.id.btnThemThongTin);
 //        DatePicker dpNgayGiao = (DatePicker)findViewById(R.id.dpPhieu);
         spnMH.setAdapter(adapterMH);
@@ -40,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         btnThem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(MainActivity.this, spnMP.getSelectedItem() + "\n" + spnMH.getSelectedItem() + "\n" + edtSoBai.getText(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, spnMP.getSelectedItem() + "\n" + spnMH.getSelectedItem() + "\n", Toast.LENGTH_SHORT).show();
             }
         });
 
