@@ -47,4 +47,9 @@ public class GiangVien {
     public void setPhieuChamBai(ArrayList<PhieuChamBai> phieuChamBai) {
         this.phieuChamBai = phieuChamBai;
     }
+
+    @Override
+    public String toString()  {
+        return this.getName();
+    }
 }

@@ -75,8 +75,15 @@ public class LoginActivity extends AppCompatActivity {
         DBhelper.QueryData("create table if not exists student( studentid varchar(30) primary key, studentname varchar(50) )");
         DBhelper.QueryData("create table if not exists score( studentid varchar(30), classid varchar(20), score float check(score >= 0 and score <= 10), primary key(studentid,classid), FOREIGN KEY (studentid) REFERENCES student(studentid), FOREIGN KEY (classid) REFERENCES class(classid) )");
 
-        DBhelper.QueryData(" insert or replace into users values('admin','123',1,'Banh Cam Vinh','0123456789')");
-        DBhelper.QueryData("insert or replace into users values('user','123',0,'Pham Nhat Quan','0123456789')");
+        DBhelper.QueryData(" insert or replace into users values('admin','123',1,'Admin','0123456789')");
+        DBhelper.QueryData(" insert or replace into users values('admin1','123',1,'Admin 1','0123456789')");
+        DBhelper.QueryData(" insert or replace into users values('admin2','123',1,'Admin 2','0123456789')");
+        DBhelper.QueryData(" insert or replace into users values('admin3','123',1,'Admin 3','0123456789')");
+        DBhelper.QueryData("insert or replace into users values('user','123',0,'User','0123456789')");
+        DBhelper.QueryData("insert or replace into users values('user1','123',0,'User 1','0123456789')");
+        DBhelper.QueryData("insert or replace into users values('user2','123',0,'User 2','0123456789')");
+        DBhelper.QueryData("insert or replace into users values('user3','123',0,'User 3','0123456789')");
+
 //        DBhelper.QueryData("insert into users values('user','123',0,'Pham Nhat Quan','0123456789') WHERE not exists(select * from users where teacherid='user')");
     }
 }

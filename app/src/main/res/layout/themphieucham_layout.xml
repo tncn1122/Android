@@ -38,15 +38,17 @@
                 android:textColor="@color/mainTextColor"
                 android:textColorHint="#790D47A1"
                 android:textColorHighlight="@color/mainTextColor"
-                android:layout_marginTop="20dp"/>
+                android:layout_marginTop="20dp"/><![CDATA[
             />
+
+            ]]>
 
             <DatePicker
                 android:id="@+id/dpPhieu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:datePickerMode="spinner"
-                android:calendarViewShown="false"/>
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner" />
 
             <TextView
                 android:layout_width="wrap_content"
