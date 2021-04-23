@@ -4,13 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class AdminMenuActivity extends AppCompatActivity {
-
+    DBHelper DBhelper ;
     SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,15 +33,37 @@ public class AdminMenuActivity extends AppCompatActivity {
         Button btn_DSMH= findViewById(R.id.btnDanhSachMonHoc);
         Button btn_phieuthanhtoan= findViewById(R.id.btnPhieuThanhToan);
         Button btn_thongkechiphi= findViewById(R.id.btnThongKeChiPhi);
+        LinearLayout lyGV = findViewById(R.id.lyGV);
         if(role ==0){
-            btn_taophieucham.setEnabled(false);
-            btn_taothongtincham.setEnabled(false);
-            btn_taophieucham.getBackground().setAlpha(15);
-            btn_taothongtincham.getBackground().setAlpha(15);
+//            btn_taophieucham.setEnabled(false);
+            btn_taophieucham.setVisibility(View.GONE);
+//            btn_taothongtincham.setEnabled(false);
+            btn_taothongtincham.setVisibility(View.GONE);
+//            btn_taophieucham.getBackground().setAlpha(15);
+//            btn_taothongtincham.getBackground().setAlpha(15);
+            lyGV.setVisibility(View.GONE);
         }else if(role == 1){
             btn_taophieucham.setEnabled(true);
             btn_taothongtincham.setEnabled(true);
+            lyGV.setVisibility(View.VISIBLE);
         }
+//        DBhelper = new DBHelper(this,"qlcd.sqlite",null,1);
+//        Cursor dt= DBhelper.GetData("select * from users");
+//        dt.moveToNext();
+//        Log.d("abcd",dt.getString(2) );
+
+        //DANG XUAT
+        Button btn_DangXuat = findViewById(R.id.btnDangXuat);
+
+        btn_DangXuat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPreferences.edit().clear();
+                Intent intent = new Intent(AdminMenuActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
         btn_DSGV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

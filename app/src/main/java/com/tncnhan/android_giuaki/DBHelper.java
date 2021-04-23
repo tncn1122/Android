@@ -9,9 +9,6 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 
 public class DBHelper extends SQLiteOpenHelper {
-    private static final String Tag = "SQLite";
-    private static final String DaTABASE_NAME = "CHAMBAI";
-    private static final int DaTABASE_VERSION = 1;
 
     public DBHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);

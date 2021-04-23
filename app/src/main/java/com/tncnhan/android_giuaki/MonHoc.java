@@ -4,11 +4,13 @@ public class MonHoc {
     private String maMH;
     private String tenMH;
     private int chiPhi;
+    private String Count;
 
-    public MonHoc(String maMH, String tenMH, int chiPhi) {
+    public MonHoc(String maMH, String tenMH, int chiPhi, String Count) {
         this.maMH = maMH;
         this.tenMH = tenMH;
         this.chiPhi = chiPhi;
+        this.Count = Count;
     }
 
     public String getMaMH() {
@@ -33,5 +35,13 @@ public class MonHoc {
 
     public void setChiPhi(int chiPhi) {
         this.chiPhi = chiPhi;
+    }
+
+    public String getCount() {
+        return Count;
+    }
+
+    public void setCount(String count) {
+        Count = count;
     }
 }

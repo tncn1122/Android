@@ -130,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
 //        DBhelper.QueryData("insert into reportinfo values('1','class1')");
 //        DBhelper.QueryData("insert into student values('s1','student1')");
 
-//        DBhelper.QueryData("insert into users values('admin','123',1,'Banh Cam Vinh','0123456789')");
-//        DBhelper.QueryData("insert into users values('user','123',0,'Pham Nhat Quan','0123456789')");
+        DBhelper.QueryData("insert into users values('admin','123',1,'Banh Cam Vinh','0123456789')");
+        DBhelper.QueryData("insert into users values('user','123',0,'Pham Nhat Quan','0123456789')");
 
 
 //        Cursor dt= DBhelper.GetData("select * from student");

@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/txtDSSV"
+            android:id="@+id/txtDSMH"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
@@ -21,32 +21,32 @@
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/txtMaMH"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/MH"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-            <TextView
-                android:id="@+id/txtTenMH"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:text="@string/TenMH"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+            android:orientation="horizontal"
+            android:gravity="right">
 
+            <ImageButton
+                android:id="@+id/btnThem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:foregroundTint="#FFFFFF"
+                android:layout_marginRight="10dp"
+                android:scaleType="fitEnd"
+                android:src="@android:drawable/ic_input_add" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="5dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -79,20 +79,18 @@
                     android:padding="10dp"
                     android:text="@string/chiPhi"
                     android:textAlignment="center" />
-                <ImageButton
-                    android:id="@+id/btnThem"
+
+                <TextView
+                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="#FFFFFF"
-                    android:backgroundTint="#FFFFFF"
-                    android:foregroundTint="#FFFFFF"
-                    android:layout_weight="1"
-                    android:scaleType="center"
-                    android:src="@android:drawable/ic_input_add" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="Tiến Độ" />
+
             </LinearLayout>
 
             <ListView
-                android:id="@+id/lvDSSV"
+                android:id="@+id/lvDSMH"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
