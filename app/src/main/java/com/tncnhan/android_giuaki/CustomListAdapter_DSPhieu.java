@@ -34,12 +34,12 @@ public class CustomListAdapter_DSPhieu extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         View kqView = View.inflate(viewGroup.getContext(), R.layout.item_phieuthanhtoan_layout, null);
         PhieuChamBai phieuCB = (PhieuChamBai)getItem(i);
-        ((TextView)kqView.findViewById(R.id.txtIDMaPhieu)).setText(String.valueOf(phieuCB.getMaPhieu()));
-        ((TextView)kqView.findViewById(R.id.txtNgayGiao)).setText(phieuCB.getNgayGiao());
-        ((TextView)kqView.findViewById(R.id.txtTongTien)).setText(String.valueOf(phieuCB.getThanhToan()));
+        ((TextView)kqView.findViewById(R.id.txtIDMaPhieuPTT)).setText(String.valueOf(phieuCB.getMaPhieu()));
+        ((TextView)kqView.findViewById(R.id.txtNgayGiaoPTT)).setText(phieuCB.getNgayGiao());
+        ((TextView)kqView.findViewById(R.id.txtTongTienPTT)).setText(String.valueOf(phieuCB.getThanhToan()));
 
         CustomListAdapter_DSThongTinPhieu dsThongTinPhieu = new CustomListAdapter_DSThongTinPhieu(phieuCB.getThongTinChamBai());
-        ((ListView)kqView.findViewById(R.id.listMHPhieu)).setAdapter(dsThongTinPhieu);
+       // ((ListView)kqView.findViewById(R.id.listMHPhieu)).setAdapter(dsThongTinPhieu);
 
         return kqView;
     }

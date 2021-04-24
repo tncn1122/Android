@@ -100,14 +100,20 @@
             android:orientation="vertical"
             android:padding="5dp">
 
-            <ListView
-                android:id="@+id/listDSPhieu"
+<!--            <ListView-->
+<!--                android:id="@+id/listDSPhieu"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="280dp"-->
+<!--                android:background="@drawable/rounded_corner"-->
+<!--                android:paddingLeft="5dp"-->
+<!--                android:paddingRight="5dp"-->
+<!--                android:paddingBottom="10dp"/>-->
+            <ExpandableListView
+                android:id="@+id/expanded_menu"
                 android:layout_width="match_parent"
-                android:layout_height="280dp"
-                android:background="@drawable/rounded_corner"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:paddingBottom="10dp"/>
+                android:layout_height="300dp"
+                android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
+                android:dividerHeight="0.5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -126,27 +132,28 @@
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
                         android:text="@string/tongCong"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textColor="#FF5722"/>
+                        android:textColor="#FF0031"/>
                     <TextView
                         android:id="@+id/txtTongThanhToan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textAlignment="center"
+                        android:layout_marginLeft="2dp"
                         android:text="@string/tongTien"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textColor="#FF5722"/>
+                        android:textColor="#FF0031"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="5dp"
                         android:textAlignment="textEnd"
                         android:text="@string/TienTe"
-                        android:textSize="24sp"
+                        android:textSize="20sp"
                         android:textStyle="bold"
-                        android:textColor="#FF5722"/>
+                        android:textColor="#FF0031"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
