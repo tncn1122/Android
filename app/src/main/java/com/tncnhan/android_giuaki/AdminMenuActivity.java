@@ -75,6 +75,7 @@ public class AdminMenuActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(AdminMenuActivity.this, DSMHActivity.class);
+                intent.putExtra("message", "admin");
                 startActivity(intent);
             }
         });

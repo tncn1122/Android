@@ -69,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
     public  void Init_DB(){
         DBhelper= new DBHelper(this,"qlcd.sqlite",null,1);
         DBhelper.QueryData("create table if not exists users(teacherid varchar(30) primary key,userpass varchar(30),userrole int,fullname nvarchar(100),phone nvarchar(20))");
-        DBhelper.QueryData("create table if not exists reportcard( reportid int IDENTITY(1,1) primary key, teacherid varchar(30), delidate date, FOREIGN KEY (teacherid) REFERENCES users(teacherid) )");
+        DBhelper.QueryData("create table if not exists reportcard( reportid int primary key AUTOINCREMENT, teacherid varchar(30), delidate date, FOREIGN KEY (teacherid) REFERENCES users(teacherid) )");
         DBhelper.QueryData("create table if not exists class( classid varchar(20) primary key, classname varchar(30), price int )");
         DBhelper.QueryData("create table if not exists reportinfo( reportid int, classid varchar(20), primary key(reportid, classid), FOREIGN KEY (reportid) REFERENCES reportcard(reportid), FOREIGN KEY (classid) REFERENCES class(classid) )");
         DBhelper.QueryData("create table if not exists student( studentid varchar(30) primary key, studentname varchar(50) )");

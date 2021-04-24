@@ -17,7 +17,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
-            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="@string/MH"
             android:textAlignment="textStart" />
@@ -27,7 +26,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="15"
-            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="@string/TenMH"
 
@@ -38,7 +36,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"
-            android:background="#FFFFFF"
             android:padding="10dp"
             android:text="@string/chiPhi"
             android:textAlignment="textEnd" />
@@ -50,15 +47,5 @@
             android:layout_weight="3"
             android:text="/" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:backgroundTint="#FFFFFF"
-            android:foregroundTint="#FFFFFF"
-            android:scaleType="center"
-            android:src="@android:drawable/ic_delete"
-            android:visibility="gone" />
     </LinearLayout>
 </LinearLayout>

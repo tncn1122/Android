@@ -26,35 +26,74 @@ public class themgvActivity extends AppCompatActivity {
         EditText edtNhapLaiMK = findViewById(R.id.edtNhapLaiMK);
         Button btnTaoGiaoVien = findViewById(R.id.btnTaoGiaoVien);
 
-        btnTaoGiaoVien.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                try {
-                    Log.d("addd", "GV: " +  edtTenTaiKhoan.getText().toString().trim());
+            btnTaoGiaoVien.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Boolean flagValid = true;
+                    if(edtTenTaiKhoan.getText().toString().trim().isEmpty())
+                    {
+                        edtTenTaiKhoan.setError("Tên tài khoản không được trống");
+                        flagValid = false;
+                    }
+                    if(edtHoVaTen.getText().toString().trim().isEmpty())
+                    {
+                        edtHoVaTen.setError("Họ và tên không được trống");
+                        flagValid = false;
+                    }
+                    if(edtMatKhau.getText().toString().trim().isEmpty())
+                    {
+                        edtMatKhau.setError("Mật khẩu không được trống");
+                        flagValid = false;
+                    }
+                    if(edtNhapLaiMK.getText().toString().trim().isEmpty())
+                    {
+                        edtNhapLaiMK.setError("Nhập lại mật khẩu");
+                        flagValid = false;
+                    }
+                    if(edtSoDienThoai.getText().toString().trim().isEmpty())
+                    {
+                        edtSoDienThoai.setError("Số điện thoại không được trống");
+                        flagValid =false;
+                    }
+                    if(edtSoDienThoai.getText().toString().trim().length() != 10)
+                    {
+                        edtSoDienThoai.setError("số điện thoại phải gồm 10 số");
+                        flagValid = false;
+                    }
+                    if(!edtMatKhau.getText().toString().trim().equals(edtNhapLaiMK.getText().toString().trim()))
+                    {
+                        edtNhapLaiMK.setError("Mật khẩu không khớp");
+                        flagValid = false;
+                    }
+                    try {
+                        if(flagValid)
+                        {
+                            Log.d("addd", "GV: " +  edtTenTaiKhoan.getText().toString().trim());
 
-                    DBhelper= new DBHelper(themgvActivity.this,"qlcd.sqlite",null,1);
-                    DBhelper.QueryData("insert into users values('" + edtTenTaiKhoan.getText().toString().trim() + "','"
-                            + edtMatKhau.getText().toString().trim() +"',0,'"
-                            + edtHoVaTen.getText().toString().trim() +"','"
-                            + edtMatKhau.getText().toString().trim() + "')");
-                    Toast.makeText(themgvActivity.this, "thêm giảng viên thành công!", Toast.LENGTH_LONG).show();
+                            DBhelper= new DBHelper(themgvActivity.this,"qlcd.sqlite",null,1);
+                            DBhelper.QueryData("insert into users values('" + edtTenTaiKhoan.getText().toString().trim() + "','"
+                                    + edtMatKhau.getText().toString().trim() +"',0,'"
+                                    + edtHoVaTen.getText().toString().trim() +"','"
+                                    + edtMatKhau.getText().toString().trim() + "')");
+                            Toast.makeText(themgvActivity.this, "thêm giảng viên thành công!", Toast.LENGTH_LONG).show();
+                            //thêm xong thì về lại danh sách
+                            Intent intent = new Intent(themgvActivity.this, DSGVActivity.class);
+                            startActivity(intent);
+                        }
 
-//                    DBhelper = new DBHelper(themgvActivity.this,"qlcd.sqlite",null,1);
-//                    Cursor dt= DBhelper.GetData("select * from users where teacherid = 'test2'");
-//                    dt.moveToNext();
-//                    Log.d("abcd",dt.getString(2));
+    //                    DBhelper = new DBHelper(themgvActivity.this,"qlcd.sqlite",null,1);
+    //                    Cursor dt= DBhelper.GetData("select * from users where teacherid = 'test2'");
+    //                    dt.moveToNext();
+    //                    Log.d("abcd",dt.getString(2));
+                    }
+                    catch (Exception e)
+                    {
+                        Toast.makeText(themgvActivity.this, "không thành công!", Toast.LENGTH_LONG).show();
+                        e.printStackTrace();
+                    }
                 }
-                catch (Exception e)
-                {
-                    Toast.makeText(themgvActivity.this, "không thành công!", Toast.LENGTH_LONG).show();
-                    e.printStackTrace();
-                }
-                //thêm xong thì về lại danh sách
-                Intent intent = new Intent(themgvActivity.this, DSGVActivity.class);
-                startActivity(intent);
-            }
-        });
-
+            });
 
     }
+
 }

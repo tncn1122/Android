@@ -37,8 +37,15 @@ public class DSMHActivity extends AppCompatActivity {
                 }
             });
 
-            DBhelper = new DBHelper(this,"qlcd.sqlite",null,1);
-            Cursor dt= DBhelper.GetData("select * from class");
+
+        }
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("message");
+        Cursor dt;
+        DBhelper = new DBHelper(this,"qlcd.sqlite",null,1);
+        if(message.equals("admin"))
+        {
+            dt= DBhelper.GetData("select * from class");
             while(dt.moveToNext())
             {
                 Log.d("MHH", dt.getString(0) + " " + dt.getString(2));
@@ -47,7 +54,16 @@ public class DSMHActivity extends AppCompatActivity {
             }
 
         }
-
+        else
+        {
+            dt= DBhelper.GetData("select class.classid, class.classname, class.price from (class inner join reportinfo rpi on class.classid = rpi.classid) inner join reportcard rpc on rpi.reportid = rpc.reportid  where teacherid = '" + message + "'" );
+            while(dt.moveToNext())
+            {
+                Log.d("MHH", dt.getString(0) + " " + dt.getString(2));
+                MonHoc MH = new MonHoc(dt.getString(0),dt.getString(1),Integer.parseInt(dt.getString(2)),"/");
+                ArrMH.add(MH);
+            }
+        }
         CustomListAdapter_DSMH adapter = new CustomListAdapter_DSMH(ArrMH);
 
         ListView listView= findViewById(R.id.lvDSMH);
