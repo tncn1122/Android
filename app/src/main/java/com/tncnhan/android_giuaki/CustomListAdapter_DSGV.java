@@ -35,7 +35,7 @@ public class CustomListAdapter_DSGV extends BaseAdapter{
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -47,4 +47,7 @@ public class CustomListAdapter_DSGV extends BaseAdapter{
         ((TextView)viewitem.findViewById(R.id.txtSdtGV)).setText(GV.getSDT());
         return viewitem;
     }
+
+
+
 }
