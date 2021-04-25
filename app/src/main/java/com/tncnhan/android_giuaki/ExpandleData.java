@@ -1,11 +1,16 @@
 package com.tncnhan.android_giuaki;
 
+import android.content.SharedPreferences;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
+
 public class ExpandleData {
+
     public static HashMap<PhieuChamBai, ArrayList<ThongTinChamBai>> getData(){
         HashMap<PhieuChamBai, ArrayList<ThongTinChamBai>> expandleListDetail = new HashMap<>();
+
         ArrayList<ThongTinChamBai> list1 = new ArrayList<>();
         ArrayList<ThongTinChamBai> list2 = new ArrayList<>();
 
@@ -32,6 +37,8 @@ public class ExpandleData {
         expandleListDetail.put(pc2, list2);
         expandleListDetail.put(pc3, list1);
         expandleListDetail.put(pc4, list2);
+
+
         return expandleListDetail;
     }
 }
