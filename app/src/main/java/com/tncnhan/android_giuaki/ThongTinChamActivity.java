@@ -2,6 +2,7 @@ package com.tncnhan.android_giuaki;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,7 +30,12 @@ public class ThongTinChamActivity extends AppCompatActivity {
         spinnerSoPhieu = findViewById(R.id.spnSoPhieu);
         spinnerTenMH = findViewById(R.id.spnTenMH);
         Button btnThemThongTin = findViewById(R.id.btnThemThongTin);
+        //nhận message từ danh sách phiếu
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("message");
+
         DBhelper= new DBHelper(this,"qlcd.sqlite",null,1);
+
         Cursor dtSoPhieu;
         try{
             dtSoPhieu= DBhelper.GetData("select reportid from reportcard");
@@ -45,8 +51,13 @@ public class ThongTinChamActivity extends AppCompatActivity {
         }catch (Exception e){
             Log.d("cc",String.valueOf(e.getMessage()));
         }
+
         ArrayAdapter spinnerAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listSoPhieu);
         spinnerSoPhieu.setAdapter(spinnerAdapter);
+
+        spinnerSoPhieu.setSelection(Integer.parseInt(message));
+        spinnerSoPhieu.setEnabled(false);
+
         spinnerSoPhieu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
@@ -78,6 +89,7 @@ public class ThongTinChamActivity extends AppCompatActivity {
         }catch (Exception e){
             Log.d("aaa",String.valueOf(e.getMessage()));
         }
+
         ArrayAdapter spAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listMonHoc);
         spinnerTenMH.setAdapter(spAdapter);
         spinnerTenMH.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -93,6 +105,8 @@ public class ThongTinChamActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "onNothingSelected", Toast.LENGTH_SHORT).show();
             }
         });
+        // gán id đã intent từ ds phiếu vào biến
+        soPhieu = Integer.parseInt(message);
         btnThemThongTin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

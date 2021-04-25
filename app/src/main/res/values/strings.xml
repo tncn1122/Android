@@ -22,6 +22,8 @@
     <string name="thongKeChiPhi">Thống kê chi phí</string>
     <string name="taoPhieuCham">Tạo Phiếu chấm</string>
     <string name="taoThongTinCham">Tạo thông tin chấm</string>
+    <string name="taoDSPhieu">Tạo danh sách Phiếu</string>
+    <string name="taoDSSV">Tạo danh sách sinh viên</string>
     <string name="tongCong">Tổng cộng:</string>
     <string name="tongTien">100,000,000</string>
     <string name="ThongTinKyTen">TP. Hồ Chí Minh, Ngày</string>
