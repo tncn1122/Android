@@ -9,10 +9,10 @@
     <string name="appName">Ứng dụng quản lý chấm bài</string>
     <string name="DSSV">Danh sách sinh viên</string>
     <string name="maSV">Mã Sinh viên</string>
-    <string name="MH">Mã Môn</string>
-    <string name="TenMH">Tên Môn</string>
-    <string name="DSMH">Danh sách Môn học</string>
-    <string name="maMH">Mã Môn học</string>
+    <string name="MH">Mã Lớp</string>
+    <string name="TenMH">Tên Lớp</string>
+    <string name="DSMH">Danh sách Lớp học</string>
+    <string name="maMH">Mã Lớp học</string>
     <string name="chiPhi">Chi Phí</string>
     <string name="tienDo">Tiến độ</string>
     <string name="dangXuat">Đăng xuất</string>
