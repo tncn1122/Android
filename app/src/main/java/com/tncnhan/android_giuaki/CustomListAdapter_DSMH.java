@@ -36,7 +36,7 @@ public class CustomListAdapter_DSMH extends BaseAdapter {
         ((TextView)viewitem.findViewById(R.id.txtMaMH)).setText(MH.getMaMH());
         ((TextView)viewitem.findViewById(R.id.txtTenMH)).setText(String.valueOf(MH.getTenMH()));
         ((TextView)viewitem.findViewById(R.id.txtChiPhi)).setText(String.valueOf(MH.getChiPhi()));
-        ((TextView)viewitem.findViewById(R.id.txtPC)).setText("3/3");
+        ((TextView)viewitem.findViewById(R.id.txtPC)).setText(MH.getCount());
         return viewitem;
     }
 }

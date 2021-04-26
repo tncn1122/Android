@@ -51,18 +51,21 @@ public class DSMHActivity extends AppCompatActivity {
             while(dt.moveToNext())
             {
                 Log.d("MHH", dt.getString(0) + " " + dt.getString(2));
-                MonHoc MH = new MonHoc(dt.getString(0),dt.getString(1),Integer.parseInt(dt.getString(2)),"/");
+                String classId = dt.getString(0);
+                MonHoc MH = new MonHoc(classId,dt.getString(1),Integer.parseInt(dt.getString(2)),getCountScoredInClass(classId)+ "/" + getCountStudentInClass(classId));
                 ArrMH.add(MH);
             }
 
         }
         else
         {
-            dt= DBhelper.GetData("select class.classid, class.classname, class.price from (class inner join reportinfo rpi on class.classid = rpi.classid) inner join reportcard rpc on rpi.reportid = rpc.reportid  where teacherid = '" + message + "'" );
+            dt= DBhelper.GetData("" +
+                    "reportid = rpc.reportid  where teacherid = '" + message + "'" );
             while(dt.moveToNext())
             {
                 Log.d("MHH", dt.getString(0) + " " + dt.getString(2));
-                MonHoc MH = new MonHoc(dt.getString(0),dt.getString(1),Integer.parseInt(dt.getString(2)),"/");
+                String classId = dt.getString(0);
+                MonHoc MH = new MonHoc(classId,dt.getString(1),Integer.parseInt(dt.getString(2)),getCountScoredInClass(classId)+ "/" + getCountStudentInClass(classId));
                 ArrMH.add(MH);
             }
         }
@@ -81,6 +84,34 @@ public class DSMHActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    private String getCountScoredInClass(String classId){
+        String res = "0";
+        try{
+            Cursor dt = DBhelper.GetData("SELECT COUNT(score) FROM score where classid = '" + classId + "'");
+            dt.moveToNext();
+            res = dt.getString(0);
+        }
+        catch (Exception e){
+
+        }
+
+        return res;
+    }
+
+    private String getCountStudentInClass(String classId){
+        String res = "0";
+        try{
+            Cursor dt = DBhelper.GetData("SELECT COUNT(1) FROM score where classid = '" + classId + "'");
+            dt.moveToNext();
+            res = dt.getString(0);
+        }
+        catch (Exception e){
+
+        }
+
+        return res;
     }
 
 
