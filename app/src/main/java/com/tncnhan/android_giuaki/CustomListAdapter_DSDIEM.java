@@ -16,17 +16,17 @@ public class CustomListAdapter_DSDIEM extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return dsDiem.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return dsDiem.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
@@ -35,7 +35,14 @@ public class CustomListAdapter_DSDIEM extends BaseAdapter {
         Diem nhapdiem= (Diem) getItem(position);
         ((TextView)viewitem.findViewById(R.id.txtMaSV)).setText(nhapdiem.sv.getID());
         ((TextView)viewitem.findViewById(R.id.txtHoTenSV)).setText(String.valueOf(nhapdiem.sv.getName()));
-        ((TextView)viewitem.findViewById(R.id.edtDiem)).setText(String.valueOf(nhapdiem.diem));
+        String score;
+        if(nhapdiem.diem < 0){
+            score = "";
+        }
+        else{
+            score = String.valueOf(nhapdiem.diem);
+        }
+        ((TextView)viewitem.findViewById(R.id.edtDiem)).setText(score);
         return viewitem;
     }
 }
