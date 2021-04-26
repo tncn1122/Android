@@ -28,9 +28,7 @@
             android:layout_weight="15"
             android:padding="10dp"
             android:text="@string/HoTen"
-
             android:textAlignment="center" />
-
         <TextView
             android:id="@+id/txtNgayGiao"
             android:layout_width="wrap_content"
@@ -39,7 +37,5 @@
             android:padding="10dp"
             android:text="@string/ngayGiao"
             android:textAlignment="textEnd" />
-
-
     </LinearLayout>
 </LinearLayout>

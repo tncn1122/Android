@@ -8,34 +8,34 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class CustomListAdapter_DSPhieuCham extends BaseAdapter {
-    ArrayList<PhieuCham> phieuCham;
+    ArrayList<PhieuCham> arrayList;
 
-    public CustomListAdapter_DSPhieuCham(ArrayList<PhieuCham> phieuCham) {
-        this.phieuCham = phieuCham;
+    public CustomListAdapter_DSPhieuCham(ArrayList<PhieuCham> arrayList) {
+        this.arrayList = arrayList;
     }
 
     @Override
     public int getCount() {
-        return 0;
+        return arrayList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return null;
+        return arrayList.get(position);
     }
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View viewitem= View.inflate(parent.getContext(),R.layout.item_dsphieu_layout,null);
-        PhieuCham Phieu= (PhieuCham) getItem(position);
-        ((TextView)viewitem.findViewById(R.id.txtMaPhieu)).setText(Phieu.getMaPhieu());
-        ((TextView)viewitem.findViewById(R.id.txtHoTenGV)).setText(Phieu.getHoTenGV());
-        ((TextView)viewitem.findViewById(R.id.txtNgayGiao)).setText(Phieu.getNgayGiao());
+        PhieuCham phieucham= (PhieuCham) getItem(position);
+        ((TextView)viewitem.findViewById(R.id.txtMaPhieu)).setText(String.valueOf(phieucham.getMaPhieu()));
+        ((TextView)viewitem.findViewById(R.id.txtHoTenGV)).setText(phieucham.getHoTenGV());
+        ((TextView)viewitem.findViewById(R.id.txtNgayGiao)).setText(phieucham.getNgayGiao());
         return viewitem;
     }
 }
