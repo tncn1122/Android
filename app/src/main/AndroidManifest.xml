@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidGiuaKi">
-        <activity android:name=".DSSVActivity"></activity>
+        <activity android:name=".DSSVNhapDiemActivity"></activity>
+        <activity android:name=".DSSVActivity" />
         <activity android:name=".themsvActivity" />
         <activity android:name=".DSPhieuActivity" />
         <activity android:name=".themgvActivity" />

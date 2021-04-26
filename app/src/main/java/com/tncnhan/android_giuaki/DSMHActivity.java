@@ -8,8 +8,10 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -69,6 +71,16 @@ public class DSMHActivity extends AppCompatActivity {
         ListView listView= findViewById(R.id.lvDSMH);
         listView.setAdapter(adapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(DSMHActivity.this,ArrMH.get(position).getMaMH(),Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(DSMHActivity.this, DSSVNhapDiemActivity.class);
+                MonHoc MH= (MonHoc) ArrMH.get(position);
+                intent.putExtra("message", ArrMH.get(position).getMaMH());
+                startActivity(intent);
+            }
+        });
     }
 
 

@@ -13,17 +13,17 @@
         >
 
         <TextView
-            android:id="@+id/txtMaGV"
+            android:id="@+id/txtMaSV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="3"
             android:background="#FFFFFF"
             android:padding="10dp"
-            android:text="@string/maGV"
+            android:text="@string/maSV"
             android:textAlignment="textStart" />
 
         <TextView
-            android:id="@+id/txtHoTenGV"
+            android:id="@+id/txtHoTenSV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="15"
@@ -34,8 +34,8 @@
             android:textAlignment="center" />
 
         <EditText
-            android:gravity="center"
             android:id="@+id/edtDiem"
+            android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="5"

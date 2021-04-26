@@ -66,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    // admin 1, user 0
     public  void Init_DB(){
         DBhelper= new DBHelper(this,"qlcd.sqlite",null,1);
         DBhelper.QueryData("create table if not exists users(teacherid varchar(30) primary key,userpass varchar(30),userrole int,fullname nvarchar(100),phone nvarchar(20))");

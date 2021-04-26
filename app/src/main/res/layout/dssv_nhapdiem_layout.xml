@@ -14,33 +14,29 @@
         >
 
         <TextView
-            android:id="@+id/txtDSSV"
+            android:id="@+id/txtDSDIEM"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="10dp"
-            android:text="@string/DSSV"
+            android:text="DANH SÁCH ĐIỂM"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/txtMaMH"
+            android:gravity="right">
+
+            <ImageButton
+                android:id="@+id/btnThem"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/MH"
-                android:textAlignment="center"
-                android:textSize="18sp" />
-            <TextView
-                android:id="@+id/txtTenMH"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="10dp"
-                android:text="@string/TenMH"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:layout_height="match_parent"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:foregroundTint="#FFFFFF"
+                android:layout_weight="0"
+                android:scaleType="fitEnd"
+                android:src="@android:drawable/ic_input_add" />
 
         </LinearLayout>
 
@@ -49,6 +45,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="5dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,20 +80,11 @@
                     android:text="Điểm"
                     android:textAlignment="center" />
 
-                <ImageButton
-                    android:id="@+id/btnThem"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="#FFFFFF"
-                    android:backgroundTint="#FFFFFF"
-                    android:foregroundTint="#FFFFFF"
-                    android:layout_weight="1"
-                    android:scaleType="center"
-                    android:src="@android:drawable/ic_input_add" />
+
             </LinearLayout>
 
             <ListView
-                android:id="@+id/lvDSSV"
+                android:id="@+id/lvDSDiem"
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
                 android:background="@drawable/rounded_corner"
