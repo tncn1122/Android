@@ -8,7 +8,7 @@
     <string name="SDT">Số điện thoại</string>
     <string name="appName">Ứng dụng quản lý chấm bài</string>
     <string name="DSSV">Danh sách sinh viên</string>
-    <string name="maSV">Mã Sinh viên</string>
+    <string name="maSV">ID</string>
     <string name="MH">Mã Lớp</string>
     <string name="TenMH">Tên Lớp</string>
     <string name="DSMH">Danh sách Lớp học</string>
