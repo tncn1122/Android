@@ -58,19 +58,19 @@ public class ThongTinChamActivity extends AppCompatActivity {
         spinnerSoPhieu.setSelection(Integer.parseInt(message));
         spinnerSoPhieu.setEnabled(false);
 
-        spinnerSoPhieu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
-                //đối số postion là vị trí phần tử trong list Data
-                String msg = "position :" + position + " value :" + listSoPhieu.get(position);
-                soPhieu=listSoPhieu.get(position);
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parentView) {
-                Toast.makeText(getApplicationContext(), "onNothingSelected", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        spinnerSoPhieu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+//                //đối số postion là vị trí phần tử trong list Data
+//                String msg = "position :" + position + " value :" + listSoPhieu.get(position);
+//                soPhieu=listSoPhieu.get(position);
+//                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_SHORT).show();
+//            }
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parentView) {
+//                Toast.makeText(getApplicationContext(), "onNothingSelected", Toast.LENGTH_SHORT).show();
+//            }
+//        });
         Cursor dtMonHoc;
         try{
             dtMonHoc= DBhelper.GetData("select * from class");

@@ -53,11 +53,11 @@ public class DSPhieuActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(DSPhieuActivity.this,ArrPC.get(position).getMaPhieu(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(DSPhieuActivity.this,ArrPC.get(position).getMaPhieu(),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DSPhieuActivity.this, ThongTinChamActivity.class);
-                intent.putExtra("message", ArrPC.get(position).getMaPhieu());
+                intent.putExtra("message", String.valueOf(ArrPC.get(position).getMaPhieu()));
                 startActivity(intent);
-            }
+           }
         });
 
         // thêm phiếu chấm aka reportcard
