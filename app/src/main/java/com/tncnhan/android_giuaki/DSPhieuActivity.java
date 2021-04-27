@@ -54,8 +54,8 @@ public class DSPhieuActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 //                Toast.makeText(DSPhieuActivity.this,ArrPC.get(position).getMaPhieu(),Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(DSPhieuActivity.this, ThongTinChamActivity.class);
-                intent.putExtra("message", String.valueOf(ArrPC.get(position).getMaPhieu()));
+                Intent intent = new Intent(DSPhieuActivity.this, dsChiTietPhieu.class);
+                intent.putExtra("message", String.valueOf(ArrPC.get(position).getMaPhieu()) + " " + ArrPC.get(position).getHoTenGV());
                 startActivity(intent);
            }
         });
