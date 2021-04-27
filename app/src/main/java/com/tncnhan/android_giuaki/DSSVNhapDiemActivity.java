@@ -115,8 +115,6 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
             Selectedtruefalse[mapIndex] = entry.getValue().second;
             studentId.add(entry.getKey());
             AlertDialogItems[mapIndex] = entry.getKey() + " - " + entry.getValue().first;
-
-
             mapIndex++;
         }
 
@@ -131,6 +129,7 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
 
                     }
                 });
+
 
                 alertdialogbuilder.setCancelable(false);
 
@@ -147,7 +146,7 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
 
                             if(value){
                                 addStudentIntoClass(studentId.get(a), message);
-                                Log.d("TESTALERT", studentId.get(a) + "--" + message);
+                                //Log.d("TESTALERT", studentId.get(a) + "--" + message);
                             }
                             else{
                                 removeStudentFromClass(studentId.get(a), message);
@@ -211,7 +210,7 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
 
     private void addStudentIntoClass (String studentId, String classId){
         try{
-            DBhelper.QueryData("insert or replace into score values('" + studentId + "','" + classId +"',NULL)");
+            DBhelper.QueryData("insert into score values('" + studentId + "','" + classId +"',NULL)");
         }catch (Exception e){
 
         }
