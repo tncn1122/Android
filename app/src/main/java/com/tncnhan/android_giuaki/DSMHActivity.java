@@ -59,8 +59,7 @@ public class DSMHActivity extends AppCompatActivity {
         }
         else
         {
-            dt= DBhelper.GetData("" +
-                    "reportid = rpc.reportid  where teacherid = '" + message + "'" );
+            dt= DBhelper.GetData("select class.classid, class.classname, class.price from (class inner join reportinfo rpi on class.classid = rpi.classid) inner join reportcard rpc on rpi.reportid = rpc.reportid  where teacherid = '" + message + "'" );
             while(dt.moveToNext())
             {
                 Log.d("MHH", dt.getString(0) + " " + dt.getString(2));
