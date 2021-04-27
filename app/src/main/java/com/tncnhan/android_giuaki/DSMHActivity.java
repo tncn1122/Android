@@ -76,7 +76,7 @@ public class DSMHActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(DSMHActivity.this,ArrMH.get(position).getMaMH(),Toast.LENGTH_SHORT).show();
+//                Toast.makeText(DSMHActivity.this,ArrMH.get(position).getMaMH(),Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(DSMHActivity.this, DSSVNhapDiemActivity.class);
                 MonHoc MH= (MonHoc) ArrMH.get(position);
                 intent.putExtra("message", ArrMH.get(position).getMaMH());

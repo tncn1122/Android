@@ -20,7 +20,7 @@ public class ThongTinChamActivity extends AppCompatActivity {
     DBHelper DBhelper;
     ArrayList<Integer> listSoPhieu = new ArrayList<>();
     ArrayList<MonHoc> listMonHoc = new ArrayList<>();
-    int soPhieu = 0;
+    int soPhieu = 1;
     String maMH = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +30,13 @@ public class ThongTinChamActivity extends AppCompatActivity {
         spinnerSoPhieu = findViewById(R.id.spnSoPhieu);
         spinnerTenMH = findViewById(R.id.spnTenMH);
         Button btnThemThongTin = findViewById(R.id.btnThemThongTin);
-        //nhận message từ danh sách phiếu
+
+        //nhận message từ nút thêm bên ds phiếu
         Intent intent = getIntent();
         String message = intent.getStringExtra("message");
+        String[] tokens = message.split(" ");
+        String token1 = tokens[0]; // MaPhieu
+//        Log.d("soPhieuIntent", message);
 
         DBhelper= new DBHelper(this,"qlcd.sqlite",null,1);
 
@@ -45,7 +49,7 @@ public class ThongTinChamActivity extends AppCompatActivity {
                 while(dtSoPhieu.moveToNext()){
                     Integer soPhieu = dtSoPhieu.getInt(0);
                     listSoPhieu.add(soPhieu);
-                    //Toast.makeText(getApplicationContext(),String.valueOf(soPhieu) , Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getApplicationContext(),String.valueOf(soPhieu) , Toast.LENGTH_SHORT).show();
                 }
             }
         }catch (Exception e){
@@ -55,7 +59,7 @@ public class ThongTinChamActivity extends AppCompatActivity {
         ArrayAdapter spinnerAdapter = new ArrayAdapter<>(this, R.layout.support_simple_spinner_dropdown_item, listSoPhieu);
         spinnerSoPhieu.setAdapter(spinnerAdapter);
 
-        spinnerSoPhieu.setSelection(Integer.parseInt(message));
+        spinnerSoPhieu.setSelection(Integer.parseInt(token1)-1);
         spinnerSoPhieu.setEnabled(false);
 
 //        spinnerSoPhieu.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -106,7 +110,7 @@ public class ThongTinChamActivity extends AppCompatActivity {
             }
         });
         // gán id đã intent từ ds phiếu vào biến
-        soPhieu = Integer.parseInt(message);
+        soPhieu = Integer.parseInt(token1);
         btnThemThongTin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,6 +121,9 @@ public class ThongTinChamActivity extends AppCompatActivity {
                 else{
                     DBhelper.QueryData("insert into reportinfo values('"+soPhieu+"','"+maMH+"')");
                     Toast.makeText(getApplicationContext(), "Thêm dữ liệu thành công!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(ThongTinChamActivity.this, dsChiTietPhieu.class);
+                    intent.putExtra("message", message);
+                    startActivity(intent);
                 }
             }
         });
