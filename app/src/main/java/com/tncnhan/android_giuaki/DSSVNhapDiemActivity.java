@@ -97,7 +97,7 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
                 for(Diem it:dsDiem)
                 {
                     DBhelper= new DBHelper(DSSVNhapDiemActivity.this,"qlcd.sqlite",null,1);
-                    DBhelper.QueryData("insert into score values('" + it.sv.getID() + "','"
+                    DBhelper.QueryData("insert or replace into score values('" + it.sv.getID() + "','"
                             + it.mh.getMaMH() +"',"
                             + it.diem + ")");
                 }

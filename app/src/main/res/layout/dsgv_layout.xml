@@ -79,7 +79,7 @@
 
             </LinearLayout>
 
-            <ListView
+            <com.baoyz.swipemenulistview.SwipeMenuListView
                 android:id="@+id/lvDSGV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
