@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -22,6 +23,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class DSSVNhapDiemActivity extends AppCompatActivity {
 
@@ -39,9 +41,10 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
         // GET THONG TIN USER
         sharedPreferences = getSharedPreferences("dataLogin",MODE_PRIVATE);
         int role= sharedPreferences.getInt("role",0);
-        ImageButton imgbtn_addDiem= findViewById(R.id.btnThem);
-        ImageButton imgbtn_addSV = findViewById(R.id.addSVbtn);
-        ImageButton imgbtn_editClass = findViewById(R.id.classEditBtn);
+        Button imgbtn_addDiem= findViewById(R.id.btnThem);
+        Button imgbtn_addSV = findViewById(R.id.addSVbtn);
+        Button imgbtn_editClass = findViewById(R.id.classEditBtn);
+        Button btn_thongKe = findViewById(R.id.btnThongKe);
         EditText NhapDiem = findViewById(R.id.edtDiem);
 
         if(role == 1){
@@ -50,8 +53,8 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
             imgbtn_addDiem.setVisibility(View.GONE);
         }else if(role == 0){
             imgbtn_addDiem.setVisibility(View.VISIBLE);
-            imgbtn_editClass.setVisibility(View.INVISIBLE);
-            imgbtn_addSV.setVisibility(View.INVISIBLE);
+            imgbtn_editClass.setVisibility(View.GONE);
+            imgbtn_addSV.setVisibility(View.GONE);
         }
         Intent intent = getIntent();
         String message = intent.getStringExtra("message");
@@ -75,7 +78,7 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
                 score = Float.parseFloat(dt.getString(2));
             }
             total++;
-            Diem diem = new Diem(sv,null,score);
+            Diem diem = new Diem(sv, mh, score);
             dsDiem.add(diem);
         }
 
@@ -88,19 +91,31 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
         listView.setAdapter(adapter);
 
         TextView count = findViewById(R.id.txtCount);
-        count.setText("Đã chấm: " + String.valueOf(notScored) + "/" + String.valueOf(total) +" số sinh viên ");
+        count.setText("Đã chấm: " + String.valueOf(total-notScored) + "/" + String.valueOf(total) +" số sinh viên ");
 
         // thêm điểm vào db
         imgbtn_addDiem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(Diem it:dsDiem)
+                for(Diem it:adapter.dsDiem)
                 {
                     DBhelper= new DBHelper(DSSVNhapDiemActivity.this,"qlcd.sqlite",null,1);
-                    DBhelper.QueryData("insert or replace into score values('" + it.sv.getID() + "','"
-                            + it.mh.getMaMH() +"',"
-                            + it.diem + ")");
+                    String sql;
+                    if (it.diem < 0){
+                        sql = "insert or replace into score values('" + it.sv.getID() + "','"
+                                + it.mh.getMaMH() +"',"
+                                + null + ")";
+                    }
+                    else{
+                        sql = "insert or replace into score values('" + it.sv.getID() + "','"
+                                + it.mh.getMaMH() +"',"
+                                + it.diem + ")";
+                    }
+
+                    DBhelper.QueryData(sql);
                 }
+                finish();
+                startActivity(getIntent());
                 Toast.makeText(DSSVNhapDiemActivity.this, "thêm danh sách điểm thành công!", Toast.LENGTH_SHORT).show();
             }
         });
@@ -172,6 +187,15 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
             }
         });
 
+        btn_thongKe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DSSVNhapDiemActivity.this, ThongKeActivity.class);
+                intent.putExtra("classId", message);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private String getTeacherOfClass(String classId){
@@ -187,13 +211,12 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
     }
 
     private Map<String, Pair<String, Boolean>> getStudentInClass(String classId){
-        Map<String, Pair<String, Boolean>> res = new HashMap<String, Pair<String, Boolean>>();
+        Map<String, Pair<String, Boolean>> res = new TreeMap<String, Pair<String, Boolean>>();
         String id = "";
         try{
             Cursor dt = DBhelper.GetData("SELECT * FROM student");
             while(dt.moveToNext()){
                 res.put(dt.getString(0), Pair.create(dt.getString(1), false));
-
             }
 
             dt = DBhelper.GetData("SELECT studentid FROM score WHERE classid = '" + classId + "'");

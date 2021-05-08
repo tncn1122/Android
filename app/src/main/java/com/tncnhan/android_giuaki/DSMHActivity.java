@@ -80,6 +80,7 @@ public class DSMHActivity extends AppCompatActivity {
                 Intent intent = new Intent(DSMHActivity.this, DSSVNhapDiemActivity.class);
                 MonHoc MH= (MonHoc) ArrMH.get(position);
                 intent.putExtra("message", ArrMH.get(position).getMaMH());
+                finish();
                 startActivity(intent);
             }
         });

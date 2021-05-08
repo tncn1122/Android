@@ -33,43 +33,6 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="right">
-
-            <ImageButton
-                android:id="@+id/classEditBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="0"
-                android:background="#FFFFFF"
-                app:srcCompat="@drawable/sound_level" />
-
-            <ImageButton
-                android:id="@+id/addSVbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="0"
-                android:background="#FFFFFF"
-                app:srcCompat="@drawable/add_user" />
-
-            <ImageButton
-                android:id="@+id/btnThem"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginEnd="10dp"
-                android:layout_weight="0"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
-                android:foregroundTint="#FFFFFF"
-                android:scaleType="fitEnd"
-                android:src="@drawable/save" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="5dp">
@@ -128,8 +91,73 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
+                android:layout_marginBottom="5dp"
                 android:text="Đã chấm: 2/3 số sinh viên "
                 android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+
+                <Button
+                    android:id="@+id/btnThongKe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0"
+                    android:autoText="false"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="2dp"
+                    android:text="Thống Kê"
+                    android:textSize="12sp"
+                    app:cornerRadius="30dp" />
+
+                <Button
+                    android:id="@+id/classEditBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="2dp"
+                    android:text="Sửa Lớp"
+                    android:textSize="12sp"
+                    app:cornerRadius="30dp" />
+
+                <Button
+                    android:id="@+id/btnThem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="2dp"
+                    android:text="Lưu Điểm"
+                    android:textSize="12sp"
+                    app:cornerRadius="30dp" />
+
+                <Button
+                    android:id="@+id/addSVbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="0"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="8dp"
+                    android:paddingBottom="2dp"
+                    android:text="Sửa Sinh Viên"
+                    android:textSize="12sp"
+                    app:cornerRadius="30dp" />
+
+            </LinearLayout>
 
         </LinearLayout>
 

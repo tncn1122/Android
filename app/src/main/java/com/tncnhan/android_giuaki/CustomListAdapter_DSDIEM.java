@@ -1,9 +1,13 @@
 package com.tncnhan.android_giuaki;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -42,7 +46,32 @@ public class CustomListAdapter_DSDIEM extends BaseAdapter {
         else{
             score = String.valueOf(nhapdiem.diem);
         }
-        ((TextView)viewitem.findViewById(R.id.edtDiem)).setText(score);
+        TextView txtDiem = (TextView) viewitem.findViewById(R.id.edtDiem);
+        txtDiem.setText(score);
+        txtDiem.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                Diem cur = dsDiem.get(position);
+                try{
+                    cur.diem = Float.valueOf(s.toString());
+                }
+                catch (Exception e){
+                    cur.diem = -1;
+                }
+                dsDiem.set(position, cur);
+            }
+        });
+
         return viewitem;
     }
 }
