@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidGiuaKi">
+        <activity android:name=".EditMHActivity"></activity>
 
         <meta-data
             android:name="com.google.android.wearable.standalone"
@@ -31,7 +32,7 @@
         <activity android:name=".AdminMenuActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".AddMHActivity" />
-        <activity android:name=".ThongKeActivity"/>
+        <activity android:name=".ThongKeActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

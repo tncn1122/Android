@@ -32,7 +32,7 @@ public class AddMHActivity extends AppCompatActivity {
                             + edtMaMonHoc.getText().toString().trim() + "','"
                             + edtTenMonHoc.getText().toString().trim() +"',"
                             + edtChiPhi.getText().toString().trim() +")");
-                    Toast.makeText(AddMHActivity.this, "thêm mon hoc thành công!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(AddMHActivity.this, "Thành công!", Toast.LENGTH_LONG).show();
 
 //                    DBhelper = new DBHelper(themgvActivity.this,"qlcd.sqlite",null,1);
 //                    Cursor dt= DBhelper.GetData("select * from users where teacherid = 'test2'");

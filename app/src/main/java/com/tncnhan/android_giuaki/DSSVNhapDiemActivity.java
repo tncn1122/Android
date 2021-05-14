@@ -45,6 +45,7 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
         Button imgbtn_addSV = findViewById(R.id.addSVbtn);
         Button imgbtn_editClass = findViewById(R.id.classEditBtn);
         Button btn_thongKe = findViewById(R.id.btnThongKe);
+        Button btn_classEdit = findViewById(R.id.classEditBtn);
         EditText NhapDiem = findViewById(R.id.edtDiem);
 
         if(role == 1){
@@ -56,6 +57,8 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
             imgbtn_editClass.setVisibility(View.GONE);
             imgbtn_addSV.setVisibility(View.GONE);
         }
+
+        //truyền vào classid
         Intent intent = getIntent();
         String message = intent.getStringExtra("message");
 
@@ -191,6 +194,15 @@ public class DSSVNhapDiemActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DSSVNhapDiemActivity.this, ThongKeActivity.class);
+                intent.putExtra("classId", message);
+                startActivity(intent);
+            }
+        });
+
+        btn_classEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DSSVNhapDiemActivity.this, EditMHActivity.class);
                 intent.putExtra("classId", message);
                 startActivity(intent);
             }
