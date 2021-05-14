@@ -43,6 +43,7 @@ public class DSMHActivity extends AppCompatActivity {
         }
         Intent intent = getIntent();
         String message = intent.getStringExtra("message");
+
         Cursor dt;
         DBhelper = new DBHelper(this,"qlcd.sqlite",null,1);
         if(message.equals("admin"))

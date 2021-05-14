@@ -46,6 +46,7 @@ public class AddMHActivity extends AppCompatActivity {
                 }
                 //thêm xong thì về lại danh sách
                 Intent intent = new Intent(AddMHActivity.this, DSMHActivity.class);
+                intent.putExtra("message", "admin");
                 startActivity(intent);
             }
         });
