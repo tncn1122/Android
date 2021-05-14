@@ -25,7 +25,6 @@ public class AdminMenuActivity extends AppCompatActivity {
         int role= sharedPreferences.getInt("role",0);
         // SET NAME TEXTVIEW
         TextView textViewuserfullname= findViewById(R.id.txtUserFullName);
-        textViewuserfullname.setText(fullname);
         // xỬ LÍ ROLE: 1-admin
         Button btn_taophieucham= findViewById(R.id.btnTaoPhieuCham);
         Button btn_taothongtincham= findViewById(R.id.btnTaoThongTinCham);
@@ -43,6 +42,7 @@ public class AdminMenuActivity extends AppCompatActivity {
 //            btn_taothongtincham.setVisibility(View.GONE);
 //            btn_taophieucham.getBackground().setAlpha(15);
 //            btn_taothongtincham.getBackground().setAlpha(15);
+            btn_DSGV.setText("SỬA THÔNG TIN CÁ NHÂN");
             lyGV.setVisibility(View.GONE);
         }else if(role == 1){
 //            btn_taophieucham.setEnabled(true);
@@ -53,6 +53,18 @@ public class AdminMenuActivity extends AppCompatActivity {
 //        Cursor dt= DBhelper.GetData("select * from users");
 //        dt.moveToNext();
 //        Log.d("abcd",dt.getString(2) );
+
+        // nhận teacherId từ Login
+        String userName = sharedPreferences.getString("username","");
+
+        Cursor dt;
+        DBhelper = new DBHelper(this,"qlcd.sqlite",null,1);
+        dt= DBhelper.GetData("select * from users where users.teacherid = '" + userName + "'");
+        //nhả data vào các field
+        dt.moveToNext();
+
+        textViewuserfullname.setText(dt.getString(3));
+
 
         //DANG XUAT
         Button btn_DangXuat = findViewById(R.id.btnDangXuat);
@@ -69,8 +81,18 @@ public class AdminMenuActivity extends AppCompatActivity {
         btn_DSGV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(AdminMenuActivity.this, DSGVActivity.class);
-                startActivity(intent);
+                if(role == 0)
+                {
+                    Intent intent = new Intent(AdminMenuActivity.this, EditUsertInfo.class);
+                    intent.putExtra("editUser", userName);
+                    startActivity(intent);
+                }
+                else
+                {
+                    Intent intent = new Intent(AdminMenuActivity.this, DSGVActivity.class);
+                    startActivity(intent);
+
+                }
             }
         });
         btn_DSMH.setOnClickListener(new View.OnClickListener() {

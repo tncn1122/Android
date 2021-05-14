@@ -81,11 +81,14 @@ public class DSGVActivity extends AppCompatActivity {
             listView.setMenuCreator(creator);
 
             // step 2. listener item click event
+            DBhelper= new DBHelper(this,"qlcd.sqlite",null,1);
             listView.setOnMenuItemClickListener(new SwipeMenuListView.OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(int position, SwipeMenu menu, int index) {
+
                     GiangVien item = ArrGV.get(position);
                     ArrGV.remove(item);
+//                    DBhelper.QueryData("delete from  where  = '" +  + "'");
                     Log.d("position",String.valueOf(position) + " " + item.getID());
                     Log.d("dsgv", String.valueOf(ArrGV));
                     adapter.notifyDataSetChanged();

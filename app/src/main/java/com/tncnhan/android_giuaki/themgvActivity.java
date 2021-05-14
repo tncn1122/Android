@@ -74,7 +74,7 @@ public class themgvActivity extends AppCompatActivity {
                             DBhelper.QueryData("insert into users values('" + edtTenTaiKhoan.getText().toString().trim() + "','"
                                     + edtMatKhau.getText().toString().trim() +"',0,'"
                                     + edtHoVaTen.getText().toString().trim() +"','"
-                                    + edtMatKhau.getText().toString().trim() + "')");
+                                    + edtSoDienThoai.getText().toString().trim() + "')");
                             Toast.makeText(themgvActivity.this, "thêm giảng viên thành công!", Toast.LENGTH_LONG).show();
                             //thêm xong thì về lại danh sách
                             Intent intent = new Intent(themgvActivity.this, DSGVActivity.class);

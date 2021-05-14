@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidGiuaKi">
-        <activity android:name=".EditMHActivity"></activity>
+        <activity android:name=".EditUsertInfo"></activity>
+        <activity android:name=".EditMHActivity" />
 
         <meta-data
             android:name="com.google.android.wearable.standalone"
