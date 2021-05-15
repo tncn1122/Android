@@ -88,9 +88,10 @@ public class DSGVActivity extends AppCompatActivity {
 
                     GiangVien item = ArrGV.get(position);
                     ArrGV.remove(item);
-//                    DBhelper.QueryData("delete from  where  = '" +  + "'");
-                    Log.d("position",String.valueOf(position) + " " + item.getID());
-                    Log.d("dsgv", String.valueOf(ArrGV));
+                    DBhelper.QueryData("delete from reportcard where teacherid = '" + item.ID + "'");
+                    DBhelper.QueryData("delete from users where teacherid = '" + item.ID + "'");
+//                    Log.d("position",String.valueOf(position) + " " + item.getID());
+//                    Log.d("dsgv", String.valueOf(ArrGV));
                     adapter.notifyDataSetChanged();
                     listView.setAdapter(adapter);
                     return false;

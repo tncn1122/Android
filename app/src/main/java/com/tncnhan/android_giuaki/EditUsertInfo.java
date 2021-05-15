@@ -21,7 +21,7 @@ public class EditUsertInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_usert_info);
-        
+
         sharedPreferences = getSharedPreferences("dataLogin",MODE_PRIVATE);
         EditText edtTenTaiKhoan = findViewById(R.id.edtTenTaiKhoan);
         EditText edtHoVaTen = findViewById(R.id.edtHoVaTen);
