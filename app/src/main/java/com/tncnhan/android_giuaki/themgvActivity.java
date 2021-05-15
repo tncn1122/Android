@@ -7,6 +7,8 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -24,6 +26,12 @@ public class themgvActivity extends AppCompatActivity {
         EditText edtSoDienThoai = findViewById(R.id.edtSoDienThoai);
         EditText edtMatKhau = findViewById(R.id.edtMatKhau);
         EditText edtNhapLaiMK = findViewById(R.id.edtNhapLaiMK);
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.tranlation_y);
+        edtTenTaiKhoan.startAnimation(animation);
+        edtHoVaTen.startAnimation(animation);
+        edtSoDienThoai.startAnimation(animation);
+        edtMatKhau.startAnimation(animation);
+        edtNhapLaiMK.startAnimation(animation);
         Button btnTaoGiaoVien = findViewById(R.id.btnTaoGiaoVien);
 
             btnTaoGiaoVien.setOnClickListener(new View.OnClickListener() {

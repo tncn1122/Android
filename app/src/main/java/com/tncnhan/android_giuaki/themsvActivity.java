@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,7 +21,9 @@ public class themsvActivity extends AppCompatActivity {
         Button btnTaoSV = findViewById(R.id.btnTaoSV);
         EditText edtMaSV = findViewById(R.id.edtMaSV);
         EditText edtTenSV = findViewById(R.id.edtTenSV);
-
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.tranlation_x);
+        edtMaSV.startAnimation(animation);
+        edtTenSV.startAnimation(animation);
         btnTaoSV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

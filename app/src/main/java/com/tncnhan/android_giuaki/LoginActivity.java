@@ -8,7 +8,10 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -28,8 +31,9 @@ public class LoginActivity extends AppCompatActivity {
 
         EditText editusername= findViewById(R.id.edtLogin);
         EditText editpassword= findViewById(R.id.edtPassword);
-
-
+        Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.uptodowndiagonal);
+        editusername.startAnimation(animation);
+        editpassword.startAnimation(animation);
         loginbtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -58,7 +62,6 @@ public class LoginActivity extends AppCompatActivity {
                     editor.putString("fullname",String.valueOf(fullname));
                     editor.commit();
                     Toast.makeText(getApplicationContext(),"Đăng nhập thành công nha :))" , Toast.LENGTH_SHORT).show();
-
                     // Chuyển giao diện
                     Intent intent = new Intent(LoginActivity.this, AdminMenuActivity.class);
                     startActivity(intent);

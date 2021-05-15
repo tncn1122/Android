@@ -72,7 +72,8 @@ public class AdminMenuActivity extends AppCompatActivity {
         btn_DangXuat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sharedPreferences.edit().clear();
+                sharedPreferences.edit().clear().apply();
+                onBackPressed();
                 Intent intent = new Intent(AdminMenuActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
